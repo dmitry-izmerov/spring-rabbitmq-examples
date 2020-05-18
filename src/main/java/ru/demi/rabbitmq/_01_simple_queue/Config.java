@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Profile;
 @Configuration
 public class Config {
     @Bean
-    Queue getQueue() {
+    Queue queue() {
         return new Queue("simple");
     }
 

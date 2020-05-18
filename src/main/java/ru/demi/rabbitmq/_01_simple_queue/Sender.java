@@ -17,6 +17,8 @@ public class Sender {
 
     @Scheduled(initialDelay = 1000, fixedDelay = 1000)
     void send() {
-        this.rabbitTemplate.convertAndSend(queue.getName(), "Hi there! - " + counter.incrementAndGet());
+        String message = "Hi there! - " + counter.incrementAndGet();
+        this.rabbitTemplate.convertAndSend(queue.getName(), message);
+        System.out.printf("Message: %s is sent.%n", message);
     }
 }

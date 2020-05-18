@@ -1,4 +1,4 @@
-package ru.demi.rabbitmq.simple_queue;
+package ru.demi.rabbitmq._01_simple_queue;
 
 import org.springframework.amqp.core.Queue;
 import org.springframework.context.annotation.Bean;

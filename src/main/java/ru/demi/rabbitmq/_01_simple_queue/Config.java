@@ -5,15 +5,20 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
-@Profile("simple_queue")
+@Profile(Config.SIMPLE_QUEUE_PROFILE)
 @Configuration
 public class Config {
+
+    public static final String SIMPLE_QUEUE_PROFILE = "simple_queue";
+    public static final String RECEIVER_PROFILE = "receiver";
+    public static final String SIMPLE_QUEUE_NAME = "simple";
+
     @Bean
     Queue queue() {
-        return new Queue("simple");
+        return new Queue(SIMPLE_QUEUE_NAME);
     }
 
-    @Profile("receiver")
+    @Profile(RECEIVER_PROFILE)
     @Bean
     Receiver receiver() {
         return new Receiver();

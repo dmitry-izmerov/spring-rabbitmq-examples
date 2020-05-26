@@ -18,6 +18,9 @@ dependencies {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
     testImplementation 'org.springframework.amqp:spring-rabbit-test'
+    testCompile "org.testcontainers:testcontainers:1.14.2"
+    testCompile "org.testcontainers:junit-jupiter:1.14.2"
+    testCompile "org.testcontainers:rabbitmq:1.14.2"
 }
 
 test {

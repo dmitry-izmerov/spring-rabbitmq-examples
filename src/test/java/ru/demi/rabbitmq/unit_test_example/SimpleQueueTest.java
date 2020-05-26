@@ -19,8 +19,9 @@ import static org.mockito.Mockito.verify;
 import static ru.demi.rabbitmq._01_simple_queue.Config.RECEIVER_PROFILE;
 import static ru.demi.rabbitmq._01_simple_queue.Config.SIMPLE_QUEUE_PROFILE;
 import static ru.demi.rabbitmq._01_simple_queue.Receiver.SIMPLE_QUEUE_LISTENER_ID;
+import static ru.demi.rabbitmq.unit_test_example.TestConfig.UNIT_TEST;
 
-@ActiveProfiles({SIMPLE_QUEUE_PROFILE, RECEIVER_PROFILE})
+@ActiveProfiles({SIMPLE_QUEUE_PROFILE, RECEIVER_PROFILE, UNIT_TEST})
 @SpringBootTest
 @SpringJUnitConfig
 class SimpleQueueTest {

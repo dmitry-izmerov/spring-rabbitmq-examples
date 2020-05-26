@@ -8,15 +8,19 @@ import org.springframework.amqp.rabbit.test.RabbitListenerTest;
 import org.springframework.amqp.rabbit.test.TestRabbitTemplate;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 
 import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.willReturn;
 import static org.mockito.Mockito.mock;
 
+@Profile(TestConfig.UNIT_TEST)
 @RabbitListenerTest
 @Configuration
 public class TestConfig {
+
+    public static final String UNIT_TEST = "unit-test";
 
     @Bean
     public TestRabbitTemplate template() {
